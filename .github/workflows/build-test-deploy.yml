@@ -1,6 +1,9 @@
 name: workflow Version Project
 
-on: push
+on: 
+  push:
+    branches:
+      - main
 
 env:
   PROJECT_VERSION: 1.0.0
@@ -18,4 +21,4 @@ jobs:
           distribution: zulu
 
       - name: build jar
-        run: mvn clean package -DskipTests
+        run: mvn clean package -DskipTests -Djar.finalName=$GITHUB_REPOSITORY_$PROJECT_VERSION

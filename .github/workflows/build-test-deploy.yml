@@ -22,4 +22,4 @@ jobs:
           java-version: 17
 
       - name: build jar
-        run: mvn clean package -DskipTests -Djar.finalName=hello-wolrd-$PROJECT_VERSION
+        run: mvn clean package -DskipTests

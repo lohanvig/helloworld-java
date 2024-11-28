@@ -27,3 +27,9 @@ jobs:
 
       - name: build jar
         run: mvn clean package -DskipTests -Djar.finalName=hello-wolrd-$PROJECT_VERSION
+            
+      - name: Cache
+        uses: actions/cache@v4.1.2
+        with:
+          path: MAVEN_OPTS
+          key: test

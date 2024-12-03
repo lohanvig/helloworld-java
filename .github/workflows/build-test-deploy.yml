@@ -28,7 +28,7 @@ jobs:
       - name: Cache
         uses: actions/cache@v4.1.2
         with:
-          path: ${{ gitlab.workspace }}/m2/repository
+          path: ${{ gitlab.workspace }}/.m2/repository
           key: dependances
 
       - name: build jar

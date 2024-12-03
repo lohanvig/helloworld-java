@@ -10,7 +10,7 @@ env:
   MAVEN_OPTS: "-DskipTests -Djar.finalName=helloworld-$PROJECT_VERSION -Dmaven.repo.local=/home/runner/work/lib"
 
 jobs:
-  main_job:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: version project

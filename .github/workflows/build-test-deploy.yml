@@ -22,11 +22,11 @@ jobs:
       - name: Setup Java JDK
         uses: actions/setup-java@v4.5.0
         with:
-          distribution: zulu
+          distribution: 'zulu'
           java-version: 17
 
       - name: build jar
-        run: mvn clear package -DskipTests -Djar.finalName=helloworld-$PROJECT_VERSION
+        run: mvn clean package -DskipTests -Djar.finalName=helloworld-$PROJECT_VERSION
             
       - name: Cache
         uses: actions/cache@v4.1.2

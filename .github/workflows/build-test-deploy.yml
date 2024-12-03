@@ -40,5 +40,15 @@ jobs:
     needs: build
 
     steps:
+
+      - name: Checkout
+        uses: actions/checkout@v4.2.2
+
+      - name: Setup Java JDK
+        uses: actions/setup-java@v4.5.0
+        with:
+          distribution: 'zulu'
+          java-version: 17
+          
       - name: "lancement des tests"
         run: mvn test

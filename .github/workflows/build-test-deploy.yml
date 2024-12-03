@@ -39,4 +39,4 @@ jobs:
 
     steps:
       - name: "lancement des tests"
-      - run: mvn test
+        run: mvn test

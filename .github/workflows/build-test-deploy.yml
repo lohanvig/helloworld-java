@@ -34,7 +34,7 @@ jobs:
       - name: build jar
         run: mvn clean package -DskipTests -Djar.finalName=helloworld-$PROJECT_VERSION
         env:
-          MAVEN_OPTS: "-Dmaven.repo.local=${{ gitlab.workspace }}/m2/repository"
+          MAVEN_OPTS: "-Dmaven.repo.local=${{ gitlab.workspace }}/.m2/repository"
             
 
           

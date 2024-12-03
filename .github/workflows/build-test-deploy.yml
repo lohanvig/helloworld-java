@@ -7,7 +7,7 @@ on:
 
 env:
   PROJECT_VERSION: 1.0.0
-  MAVEN_OPTS: "-DskipTests -Djar.finalName=helloworld-$PROJECT_VERSION -Dmaven.repo.local=/home/runner/work/lib"
+  MAVEN_OPTS: "-Dmaven.repo.local=/home/runner/work/lib"
 
 jobs:
   build:
@@ -33,9 +33,6 @@ jobs:
         with:
           path: ${{env.MAVEN_OPTS}}
           key: dependances
-
-      - name: Installer dependances
-        run: 
 
           
   test:

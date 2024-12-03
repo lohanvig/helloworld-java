@@ -26,10 +26,10 @@ jobs:
           java-version: 17
 
       - name: build jar
-        run: MAVEN_OPTS
+        run: mvn clear package -DskipTests -Djar.finalName=${{github.repository}}-${{env.PROJECT_VERSION}}
             
       - name: Cache
         uses: actions/cache@v4.1.2
         with:
-          path: MAVEN_OPTS
+          path: ${{env.MAVEN_OPTS}}
           key: test

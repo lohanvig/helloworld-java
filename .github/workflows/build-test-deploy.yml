@@ -29,14 +29,16 @@ jobs:
       - name: Cache
         uses: actions/cache@v4.1.2
         with:
-          path: ${{env.MAVEN_OPTS}}
+          path: /home/runne/work/lib
           key: ${{ runner.os }}-maven-${{ hashFiles('**pom.xml') }}
 
       - name: build jar
         run: mvn clean package -DskipTests -Djar.finalName=helloworld-$PROJECT_VERSION
 
-      - name: Download a Build Artifact
-        uses: actions/download-artifact@v4.1.8
+      - name: Upload a Build Artifact
+        uses: actions/upload-artifact@v4.4.3
+        with:
+          path: /home/runner/work/helloworld-java/helloworld-java/target/helloworld-1.0.0.jar
 
           
   test:

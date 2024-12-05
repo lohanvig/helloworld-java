@@ -58,3 +58,15 @@ jobs:
           
       - name: "lancement des tests"
         run: mvn test
+
+  deploy:
+    runs-on: ubuntu-lastest
+    needs: [build, test]
+
+    steps:
+       - name: Download a Build Artifact
+         uses: actions/download-artifact@v4.1.8
+         with: 
+           name: artifact
+      #- run: echo ("téléchargé")
+  

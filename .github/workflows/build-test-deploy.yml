@@ -34,7 +34,11 @@ jobs:
 
       - name: build jar
         run: mvn clean package -DskipTests -Djar.finalName=helloworld-$PROJECT_VERSION
-            
+
+      - name: Download a Build Artifact
+        uses: actions/download-artifact@v4.1.8
+        with : 
+          name : helloworld-$PROJECT_VERSION
 
           
   test:

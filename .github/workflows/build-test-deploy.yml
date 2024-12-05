@@ -68,5 +68,7 @@ jobs:
          uses: actions/download-artifact@v4.1.8
          with: 
            name: artifact
-      #- run: echo ("téléchargé")
+           
+       -  name: Deploiement fini
+          run: echo Deploiement effectue
   
